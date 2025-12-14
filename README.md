@@ -34,91 +34,71 @@ This repo is organized by **patterns / chapters**, each chapter contains multipl
   - Problem 2: [Remove Duplicates](Patterns/01-two-pointers/problem-02-remove-duplicates/statement.md)
 
 ## Hash Maps and Sets
-- Folder: `Patterns/02-hash-maps-and-sets/`
-- Problems:
-  - Problem 1: [Two Sum](Patterns/02-hash-maps-and-sets/problem-01-two-sum/statement.md)
-
+ - Problem 1:
+ - Problem 2:
 ## Linked Lists
-- Folder: `Patterns/03-linked-lists/`
-- Problems:
-  - Problem 1: [Reverse Linked List](Patterns/03-linked-lists/problem-01-reverse-linked-list/statement.md)
-
+ - Problem 1:
+ - Problem 2:
 ## Fast and Slow Pointers
-- Folder: `Patterns/04-fast-and-slow-pointers/`
-- Problems:
-  - Problem 1: [Linked List Cycle](Patterns/04-fast-and-slow-pointers/problem-01-linkedlist-cycle/statement.md)
+ - Problem 1:
+ - Problem 2:
 
 ## Sliding Windows
-- Folder: `Patterns/05-sliding-windows/`
-- Problems:
-  - Problem 1: [Longest Substring K Distinct](Patterns/05-sliding-windows/problem-01-longest-substring-k-distinct/statement.md)
+ - Problem 1:
+ - Problem 2:
 
 ## Binary Search
-- Folder: `Patterns/06-binary-search/`
-- Problems:
-  - Problem 1: [Search Rotated Array](Patterns/06-binary-search/problem-01-search-rotated-array/statement.md)
+ - Problem 1:
+ - Problem 2:
 
 ## Stacks
-- Folder: `Patterns/07-stacks/`
-- Problems:
-  - Problem 1: [Valid Parentheses](Patterns/07-stacks/problem-01-valid-parentheses/statement.md)
+ - Problem 1:
+ - Problem 2:
 
 ## Heaps
-- Folder: `Patterns/08-heaps/`
-- Problems:
-  - Problem 1: [Top K Elements](Patterns/08-heaps/problem-01-top-k-elements/statement.md)
+ - Problem 1:
+ - Problem 2:
 
 ## Intervals
-- Folder: `Patterns/09-intervals/`
-- Problems:
-  - Problem 1: [Merge Intervals](Patterns/09-intervals/problem-01-merge-intervals/statement.md)
+ - Problem 1:
+ - Problem 2:
 
 ## Prefix Sums
-- Folder: `Patterns/10-prefix-sums/`
-- Problems:
-  - Problem 1: [Range Sum Query](Patterns/10-prefix-sums/problem-01-range-sum-query/statement.md)
+ - Problem 1:
+ - Problem 2:)
 
 ## Trees
-- Folder: `Patterns/11-trees/`
-- Problems:
-  - Problem 1: [Max Depth](Patterns/11-trees/problem-01-max-depth/statement.md)
+ - Problem 1:
+ - Problem 2:
 
 ## Tries
-- Folder: `Patterns/12-tries/`
-- Problems:
-  - Problem 1: [Implement Trie](Patterns/12-tries/problem-01-implement-trie/statement.md)
+ - Problem 1:
+ - Problem 2:
 
 ## Graphs
-- Folder: `Patterns/13-graphs/`
-- Problems:
-  - Problem 1: [BFS / DFS](Patterns/13-graphs/problem-01-bfs-dfs/statement.md)
+ - Problem 1:
+ - Problem 2:)
 
 ## Backtracking
-- Folder: `Patterns/14-backtracking/`
-- Problems:
-  - Problem 1: [Permutations](Patterns/14-backtracking/problem-01-permutations/statement.md)
+ - Problem 1:
+ - Problem 2:
 
 ## Dynamic Programming
-- Folder: `Patterns/15-dynamic-programming/`
-- Problems:
-  - Problem 1: [01 Knapsack](Patterns/15-dynamic-programming/problem-01-01-knapsack/statement.md)
+ - Problem 1:
+ - Problem 2:)
 
 ## Greedy
-- Folder: `Patterns/16-greedy/`
-- Problems:
-  - Problem 1: [Activity Selection](Patterns/16-greedy/problem-01-activity-selection/statement.md)
+ - Problem 1:
+ - Problem 2:
 
 ## Sort and Search
-- Folder: `Patterns/17-sort-and-search/`
-- Problems:
-  - Problem 1: [Merge Sort](Patterns/17-sort-and-search/problem-01-merge-sort/statement.md)
+ - Problem 1:
+ - Problem 2:
 
 ## Bit Manipulation
-- Folder: `Patterns/18-bit-manipulation/`
-- Problems:
-  - Problem 1: [Single Number](Patterns/18-bit-manipulation/problem-01-single-number/statement.md)
+ - Problem 1:
+ - Problem 2:
 
 ## Math and Geometry
-- Folder: `Patterns/19-math-and-geometry/`
-- Problems:
-  - Problem 1: [GCD](Patterns/19-math-and-geometry/problem-01-gcd/statement.md)
+ - Problem 1:
+ - Problem 2:
