@@ -30,9 +30,7 @@ This repo is organized by **patterns / chapters**, each chapter contains multipl
 ---
 
 ## Two Pointers
-- Folder: `Patterns/01-two-pointers/`
-- Problems:
-  - Problem 1: [Pair with Target Sum](pair-sum-sorted/statement.md)
+  - Problem 1: [Pair Sum Sorted](pair-sum-sorted/statement.md)
   - Problem 2: [Remove Duplicates](Patterns/01-two-pointers/problem-02-remove-duplicates/statement.md)
 
 ## Hash Maps and Sets
