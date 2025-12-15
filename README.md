@@ -105,3 +105,16 @@ This repo is organized by **patterns / chapters**, each chapter contains multipl
 ## Math and Geometry
  - Problem 1:
  - Problem 2:
+
+## Contribution Guide
+
+- **Thanks for contributing!** To contribute, fork the repo and create a branch:
+  - `git checkout -b feature/your-name-description`
+- Make focused, well-tested changes and write clear commit messages.
+- Follow the existing code style (run formatters: `gofmt` / `prettier` / `black` as applicable).
+- Keep pull requests small; add tests or examples when relevant.
+- Use conventional commit prefixes like `feat:`, `fix:`, `docs:` in messages.
+- For large changes, open an issue first to discuss the approach.
+- If the project doesn't yet have one, consider adding a Code of Conduct and contribution templates.
+
+If you'd like, I can commit and push this change for you.
