@@ -37,7 +37,7 @@ This repo is organized by **patterns / chapters**, each chapter contains multipl
  - Problem 1:
  - Problem 2:
 ## Linked Lists
- - Implementation: [Linked lists Implementation](linked-lists/linked-lists-implementations/overview.md)
+ - Implementation: [Linked lists Implementation](linked-lists/linked-lists-implementations/README.md)
  - Problem 1:
  - Problem 2:
  
