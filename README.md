@@ -37,7 +37,7 @@ This repo is organized by **patterns / chapters**, each chapter contains multipl
  - Problem 1:
  - Problem 2:
 ## Linked Lists
- - Problem 1: [Linkedlist Implementation](linked-list/linked-list-implementation/)
+ - Problem 1: [Linked lists Implementation](linked-lists/linked-lists-implementations/overview.md)
  - Problem 2:
 ## Fast and Slow Pointers
  - Problem 1:
