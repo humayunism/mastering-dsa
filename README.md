@@ -13,7 +13,7 @@ This repo is organized by **patterns / chapters**, each chapter contains multipl
 4. [Fast and Slow Pointers](#fast-and-slow-pointers)
 5. [Sliding Windows](#sliding-windows)
 6. [Binary Search](#binary-search)
-7. [Stacks](#stacks)
+7. [Stacks](#stacks-and-queues)
 8. [Heaps](#heaps)
 9. [Intervals](#intervals)
 10. [Prefix Sums](#prefix-sums)
@@ -22,7 +22,7 @@ This repo is organized by **patterns / chapters**, each chapter contains multipl
 13. [Graphs](#graphs)
 14. [Backtracking](#backtracking)
 15. [Dynamic Programming](#dynamic-programming)
-16. [Greedy](#greedy)
+16. [Greedy](#greedy-algorithms)
 17. [Sort and Search](#sort-and-search)
 18. [Bit Manipulation](#bit-manipulation)
 19. [Math and Geometry](#math-and-geometry)
@@ -37,7 +37,7 @@ This repo is organized by **patterns / chapters**, each chapter contains multipl
  - Problem 1:
  - Problem 2:
 ## Linked Lists
- - Problem 1:
+ - Problem 1: [Linkedlist Implementation](linked-list/linked-list-implementation/)
  - Problem 2:
 ## Fast and Slow Pointers
  - Problem 1:
