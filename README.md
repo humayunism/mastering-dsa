@@ -95,7 +95,7 @@ This repo is organized by **patterns / chapters**, each chapter contains multipl
  - Problem 2:
 
 ## Sort and Search
- - Problem 1:
+ - Problem 1:[Bubble Sort](sort-and-search/bubble_sort/statement.md)
  - Problem 2:
 
 ## Bit Manipulation
