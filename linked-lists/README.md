@@ -98,6 +98,8 @@ Every linked list supports these fundamental operations:
 - Insertion
 - Deletion
 - Searching
+- Update
+- Reversewaw
 
 Among these, **traversal** is the foundation of all linked list logic.
 
