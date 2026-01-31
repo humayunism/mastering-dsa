@@ -103,8 +103,7 @@ This repo is organized by **patterns / chapters**, each chapter contains multipl
  - Problem 2:
 
 ## Math and Geometry
- - Problem 1:[Smallest Integer divisible by K](#math-and-geometry)
-   [View on LeetCode](https://leetcode.com/problems/smallest-integer-divisible-by-k/description/)
+ - Problem 1:[Smallest Integer divisible by K](#math-and-geometry)   [View on LeetCode](https://leetcode.com/problems/smallest-integer-divisible-by-k/description/)
  - Problem 2:[Find the maximum points on a straight line](#math-and-geometry)
 
 ## Contribution Guide
