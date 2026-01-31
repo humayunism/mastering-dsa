@@ -104,6 +104,7 @@ This repo is organized by **patterns / chapters**, each chapter contains multipl
 
 ## Math and Geometry
  - Problem 1: [Smallest Integer divisible by K](math-and-geometry/smallest-integer-divisible-by-k/statement.md) | [View on LeetCode](https://leetcode.com/problems/smallest-integer-divisible-by-k/description/)
+ 
  - Problem 2: [Max Points on a Line](math-and-geometry/max-points-on-a-line/statement.md) | [View on LeetCode](https://leetcode.com/problems/max-points-on-a-line/description/)
 
 ## Contribution Guide
