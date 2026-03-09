@@ -1,96 +1,83 @@
-// We will implement a singly linked list using a functional approach (class methods)
-
-// Step 1 : The node class
-
-// First we need a a blueprint for a single node . A node holds data and a pointer(address/ reference) to the next node in the list.
-
-
-class Node {
+"use strict";
+// Step 1: The LinkedListNode Class
+// Blueprint for a single node. A node holds data and a pointer (reference) to the next node.
+// We use Generics <T> so the list can store any type of data (number, string, etc.)
+class LinkedListNode {
     constructor(data) {
-        this.data = data;// the value
-        this.next = null;// The pointer (initially pointing to null)
+        this.data = data; // The value
+        this.next = null; // The pointer (initially pointing to null)
     }
 }
-
-// Step 2 : The singly linked list class
-
-
+// Step 2: The Singly Linked List Class
 class LinkedList {
     constructor() {
         this.head = null; // Initially the list is empty so head is null
     }
-  // Methods will be added here...
-
-// Step 3 : Implementing methods for the linked list
-
-// insert operations
-// insert at the beginning(prepend)
-//Logic: Create a new node, point the new nodes's next to the current head, update the head to the new node
-// Insert at the end (append)
-// logic : Create a new node, if the list is empty, make it the head. If not, traverse to the end of the list and point the last node's next to the new node.
-
-
+    // Step 3: Implementing methods for the linked list
+    // Insert Operations
+    // Insert at the beginning (prepend)
+    // Logic: Create a new node, point the new node's next to the current head, update the head to the new node
     insertAtBeginning(data) {
-        const newNode = new Node(data);
+        const newNode = new LinkedListNode(data);
         newNode.next = this.head;
         this.head = newNode;
         console.log(`Inserted ${data} at the beginning`);
     }
-
+    // Insert at the end (append)
+    // Logic: Create a new node, if the list is empty, make it the head. 
+    // If not, traverse to the end of the list and point the last node's next to the new node.
     insertAtEnd(data) {
-        const newNode = new Node(data);
-        if(!this.head) {
+        const newNode = new LinkedListNode(data);
+        if (!this.head) {
             this.head = newNode;
             console.log(`Inserted ${data} at the end as the head node`);
             return;
         }
-
-        // if not, traverse to the end of the list
+        // If not, traverse to the end of the list
         let current = this.head;
-        while(current.next) {
+        while (current.next) {
             current = current.next;
         }
+        // TypeScript knows current is not null here because of the while loop condition
         current.next = newNode;
         console.log(`Inserted ${data} at the end`);
-
     }
-
-    issertAtPosition(data, position) {
-        if(position < 0) {
+    insertAtPosition(data, position) {
+        if (position < 0) {
             console.log("Invalid position");
             return;
         }
-
-        if(position === 0) {
+        if (position === 0) {
             this.insertAtBeginning(data);
             return;
         }
-
-        const newNode = new Node(data);
+        const newNode = new LinkedListNode(data);
         let current = this.head;
-        for(let i = 0; i < position - 1 && current; i++) {
-            current = current.next;
+        // Traverse to the node just before the desired position
+        for (let i = 0; i < position - 1; i++) {
+            if (current) {
+                current = current.next;
+            }
+            else {
+                break;
+            }
         }
-
-        if(!current) {
+        if (!current) {
             console.log("Position out of bounds");
             return;
         }
-
         newNode.next = current.next;
         current.next = newNode;
         console.log(`Inserted ${data} at position ${position}`);
     }
-
-    // insert after a specific value
-
+    // Insert after a specific value
     insertAfterValue(data, value) {
-        const newNode = new Node(data);
+        const newNode = new LinkedListNode(data);
         let current = this.head;
-        while(current && current.data !== value) {
+        while (current && current.data !== value) {
             current = current.next;
         }
-        if(!current) {
+        if (!current) {
             console.log("Value not found");
             return;
         }
@@ -99,20 +86,21 @@ class LinkedList {
         console.log(`Inserted ${data} after value ${value}`);
     }
     insertBeforeValue(data, value) {
-        const newNode = new Node(data);
-        if(!this.head) {
+        const newNode = new LinkedListNode(data);
+        if (!this.head) {
             console.log("List is empty");
             return;
         }
-        if(this.head.data === value) {
+        if (this.head.data === value) {
             this.insertAtBeginning(data);
             return;
         }
         let current = this.head;
-        while(current.next && current.next.data !== value) {
+        // We look ahead to see if the NEXT node is the target
+        while (current.next && current.next.data !== value) {
             current = current.next;
         }
-        if(!current.next) {
+        if (!current.next) {
             console.log("Value not found");
             return;
         }
@@ -120,135 +108,135 @@ class LinkedList {
         current.next = newNode;
         console.log(`Inserted ${data} before value ${value}`);
     }
-
-    // delete operations 
-    // delete the first Nnode;
-    //logic : Move the head pointer to the next node. This first node is automatically removed by garbage collection
-
-    
+    // Delete Operations 
+    // Delete the first node
+    // Logic: Move the head pointer to the next node. The first node is automatically removed by garbage collection
     deleteFirstNode() {
-        if(!this.head) {
+        if (!this.head) {
             console.log("List is empty");
             return;
         }
         this.head = this.head.next;
         console.log("Deleted the first node");
     }
-
     deleteLastNode() {
-        if(!this.head) {
+        if (!this.head) {
             console.log("List is empty");
             return;
         }
-        if(!this.head.next) { // only one node
+        if (!this.head.next) { // Only one node
             this.head = null;
             console.log("Deleted the last node, list is now empty");
             return;
         }
         let current = this.head;
-        while(current.next && current.next.next) {
+        // Traverse to the second to last node
+        while (current.next && current.next.next) {
             current = current.next;
         }
+        // current.next is guaranteed to exist here due to the previous if check
         current.next = null;
         console.log("Deleted the last node");
     }
-    // delete node at a specific position
-
+    // Delete node at a specific position
     deleteNodeAtPosition(position) {
-        if(position < 0) {
+        if (position < 0) {
             console.log("Invalid position");
             return;
         }
-
-        if(position === 0) {
+        if (position === 0) {
             this.deleteFirstNode();
             return;
         }
-
         let current = this.head;
-        for(let i = 0; i < position - 1 && current; i++) {
-            current = current.next;
+        for (let i = 0; i < position - 1; i++) {
+            if (current) {
+                current = current.next;
+            }
+            else {
+                break;
+            }
         }
-
-        if(!current || !current.next) {
+        if (!current || !current.next) {
             console.log("Position out of bounds");
             return;
         }
-
         current.next = current.next.next;
         console.log(`Deleted node at position ${position}`);
     }
-
-    // delete a node by value
-
+    // Delete a node by value
     deleteNodeByValue(value) {
-        if(!this.head) {
+        if (!this.head) {
             console.log("List is empty");
             return;
         }
-        if(this.head.data === value) {
+        if (this.head.data === value) {
             this.deleteFirstNode();
             return;
         }
         let current = this.head;
-        while(current.next && current.next.data !== value) {
+        // Look ahead to find the node BEFORE the one we want to delete
+        while (current.next && current.next.data !== value) {
             current = current.next;
         }
-        if(!current.next) {
+        if (!current.next) {
             console.log("Value not found");
             return;
         }
         current.next = current.next.next;
         console.log(`Deleted node with value ${value}`);
     }
-
-    // search operations and Traversal operations
-
-    // search for a value;
-    // logic : Traverse the list and compare each node's data with the target value
-
+    // Search Operations and Traversal Operations
+    // Search for a value
+    // Logic: Traverse the list and compare each node's data with the target value
     searchValue(value) {
         let current = this.head;
-        while(current) {
-            if(current.data === value) {
+        while (current) {
+            if (current.data === value) {
                 console.log(`Value ${value} found in the list`);
                 return true;
             }
-           current = current.next;
+            current = current.next;
         }
         console.log(`Value ${value} not found in the list`);
         return false;
     }
-    // print list 
-    // logic : Traverse the list and collect each node's data for display
+    // Print list 
+    // Logic: Traverse the list and collect each node's data for display
     printList() {
         let current = this.head;
         let listStr = "";
-        while(current) {
-            listStr += current.data + " -->";
+        while (current) {
+            listStr += current.data + " --> ";
             current = current.next;
         }
-        console.log("List: " + listStr);
+        // Add null to indicate the end
+        console.log("List: " + listStr + "null");
     }
-
-} // end of the linkedlist class
-
-// let test the implementation at this phase
+}
+// End of the linkedlist class
+// Let's test the implementation at this phase
+// We specify  because our examples use numbers.
 const linkedList = new LinkedList();
-// now make a list by inserting some values
+// Now make a list by inserting some values
 linkedList.insertAtEnd(10);
 linkedList.insertAtBeginning(5);
 linkedList.insertAtEnd(15);
 linkedList.insertAfterValue(12, 10);
 linkedList.insertBeforeValue(8, 10);
-linkedList.printList(); // Expected List: 5 --> 8 --> 10 --> 12 --> 15 -->
-linkedList.searchValue(12); // Expected: Value 12 found in the list
+linkedList.printList();
+// Expected List: 5 --> 8 --> 10 --> 12 --> 15 --> null
+linkedList.searchValue(12);
+// Expected: Value 12 found in the list
 linkedList.deleteNodeByValue(8);
-linkedList.printList(); // Expected List: 5 --> 10 --> 12 --> 15 -->
+linkedList.printList();
+// Expected List: 5 --> 10 --> 12 --> 15 --> null
 linkedList.deleteFirstNode();
-linkedList.printList(); // Expected List: 10 --> 12 --> 15 -->
+linkedList.printList();
+// Expected List: 10 --> 12 --> 15 --> null
 linkedList.deleteLastNode();
-linkedList.printList(); // Expected List: 10 --> 12 -->         
+linkedList.printList();
+// Expected List: 10 --> 12 --> null
 linkedList.deleteNodeAtPosition(1);
-
-// now implement this linkedlist by pure functional approach without using classes
+linkedList.printList();
+// Expected List: 10 --> null

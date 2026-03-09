@@ -1,10 +1,10 @@
-// Step 1: The Node Class
+// Step 1: The LinkedListNode Class
 // Blueprint for a single node. A node holds data and a pointer (reference) to the next node.
 // We use Generics <T> so the list can store any type of data (number, string, etc.)
 
-class Node<T> {
+class LinkedListNode<T> {
     public data: T;
-    public next: Node<T> | null;
+    public next: LinkedListNode<T> | null;
 
     constructor(data: T) {
         this.data = data; // The value
@@ -15,7 +15,7 @@ class Node<T> {
 // Step 2: The Singly Linked List Class
 
 class LinkedList<T> {
-    public head: Node<T> | null;
+    public head: LinkedListNode<T> | null;
 
     constructor() {
         this.head = null; // Initially the list is empty so head is null
@@ -28,7 +28,7 @@ class LinkedList<T> {
     // Logic: Create a new node, point the new node's next to the current head, update the head to the new node
     
     public insertAtBeginning(data: T): void {
-        const newNode: Node<T> = new Node<T>(data);
+        const newNode: LinkedListNode<T> = new LinkedListNode<T>(data);
         newNode.next = this.head;
         this.head = newNode;
         console.log(`Inserted ${data} at the beginning`);
@@ -39,7 +39,7 @@ class LinkedList<T> {
     // If not, traverse to the end of the list and point the last node's next to the new node.
 
     public insertAtEnd(data: T): void {
-        const newNode: Node<T> = new Node<T>(data);
+        const newNode: LinkedListNode<T> = new LinkedListNode<T>(data);
         if (!this.head) {
             this.head = newNode;
             console.log(`Inserted ${data} at the end as the head node`);
@@ -47,7 +47,7 @@ class LinkedList<T> {
         }
 
         // If not, traverse to the end of the list
-        let current: Node<T> | null = this.head;
+        let current: LinkedListNode<T> | null = this.head;
         while (current.next) {
             current = current.next;
         }
@@ -68,8 +68,8 @@ class LinkedList<T> {
             return;
         }
 
-        const newNode: Node<T> = new Node<T>(data);
-        let current: Node<T> | null = this.head;
+        const newNode: LinkedListNode<T> = new LinkedListNode<T>(data);
+        let current: LinkedListNode<T> | null = this.head;
         
         // Traverse to the node just before the desired position
         for (let i = 0; i < position - 1; i++) {
@@ -93,8 +93,8 @@ class LinkedList<T> {
     // Insert after a specific value
 
     public insertAfterValue(data: T, value: T): void {
-        const newNode: Node<T> = new Node<T>(data);
-        let current: Node<T> | null = this.head;
+        const newNode: LinkedListNode<T> = new LinkedListNode<T>(data);
+        let current: LinkedListNode<T> | null = this.head;
         
         while (current && current.data !== value) {
             current = current.next;
@@ -111,7 +111,7 @@ class LinkedList<T> {
     }
 
     public insertBeforeValue(data: T, value: T): void {
-        const newNode: Node<T> = new Node<T>(data);
+        const newNode: LinkedListNode<T> = new LinkedListNode<T>(data);
         
         if (!this.head) {
             console.log("List is empty");
@@ -123,7 +123,7 @@ class LinkedList<T> {
             return;
         }
         
-        let current: Node<T> | null = this.head;
+        let current: LinkedListNode<T> | null = this.head;
         
         // We look ahead to see if the NEXT node is the target
         while (current.next && current.next.data !== value) {
@@ -166,7 +166,7 @@ class LinkedList<T> {
             return;
         }
         
-        let current: Node<T> | null = this.head;
+        let current: LinkedListNode<T> | null = this.head;
         
         // Traverse to the second to last node
         while (current.next && current.next.next) {
@@ -191,7 +191,7 @@ class LinkedList<T> {
             return;
         }
 
-        let current: Node<T> | null = this.head;
+        let current: LinkedListNode<T> | null = this.head;
         
         for (let i = 0; i < position - 1; i++) {
             if (current) {
@@ -223,7 +223,7 @@ class LinkedList<T> {
             return;
         }
         
-        let current: Node<T> | null = this.head;
+        let current: LinkedListNode<T> | null = this.head;
         
         // Look ahead to find the node BEFORE the one we want to delete
         while (current.next && current.next.data !== value) {
@@ -245,7 +245,7 @@ class LinkedList<T> {
     // Logic: Traverse the list and compare each node's data with the target value
 
     public searchValue(value: T): boolean {
-        let current: Node<T> | null = this.head;
+        let current: LinkedListNode<T> | null = this.head;
         while (current) {
             if (current.data === value) {
                 console.log(`Value ${value} found in the list`);
@@ -261,7 +261,7 @@ class LinkedList<T> {
     // Print list 
     // Logic: Traverse the list and collect each node's data for display
     public printList(): void {
-        let current: Node<T> | null = this.head;
+        let current: LinkedListNode<T> | null = this.head;
         let listStr: string = "";
         while (current) {
             listStr += current.data + " --> ";
