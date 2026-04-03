@@ -1,7 +1,7 @@
-# 🚀 Mastering Data Structures & Algorithms
-> "Don't just code. Build your mathematical maturity to conquer any problem."
+#  Mastering Data Structures & Algorithms
+## Think ## Feel ## Code
 
-Welcome! এই রিপোজিটরিতে ১৯+ চ্যাপ্টারে সাজানো হয়েছে DSA-এর সব গুরুত্বপূর্ণ প্যাটার্ন। প্রতিটি চ্যাপ্টার গাণিতিক ভিত্তি এবং মাল্টি-ল্যাঙ্গুয়েজ সলিউশন দিয়ে ডিজাইন করা।
+Welcome! This repository organizes all essential DSA patterns into 19+ chapters. Each chapter is designed with mathematical foundations and multi-language solutions.
 
 ---
 
@@ -56,9 +56,9 @@ Welcome! এই রিপোজিটরিতে ১৯+ চ্যাপ্ট�
 ---
 
 ### 🛠️ Features of this Guide
-- ✅ **Mathematical Intuition:** শুধু কোড নয়, লজিকের পেছনের ম্যাথ।
-- ✅ **Multi-Language:** JS, TS, Go, Python, C++ সলিউশন।
-- ✅ **Clean Code:** ইন্টারভিউ স্ট্যান্ডার্ড কোড প্র্যাকটিস।
+- ✅ **Mathematical Intuition:** Not just code, but the math behind the logic.
+- ✅ **Multi-Language:** Solutions in JS, TS, Go, Python, and C++.
+- ✅ **Clean Code:** Interview-standard code practices.
 
 ---
 > "Keep solving, keep growing." – **Humayun**
