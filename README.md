@@ -1,37 +1,67 @@
-# Mastering DSA
+# 🚀 Mastering Data Structures & Algorithms
+> "Don't just code. Build your mathematical maturity to conquer any problem."
 
-Welcome to my **Mastering DSA** repository.  
-This repo is organized by **patterns / chapters**, each chapter contains multiple problems with statement, approach, and solutions in multiple languages.
+Welcome! এই রিপোজিটরিতে ১৯+ চ্যাপ্টারে সাজানো হয়েছে DSA-এর সব গুরুত্বপূর্ণ প্যাটার্ন। প্রতিটি চ্যাপ্টার গাণিতিক ভিত্তি এবং মাল্টি-ল্যাঙ্গুয়েজ সলিউশন দিয়ে ডিজাইন করা।
 
 ---
 
-<div align="right" style="margin-top: 2.5em; margin-bottom: 2.5em;">
-  <h2 style="margin-bottom: 1.2em; font-size: 1.6em; font-weight: 700; color: #3a5a40; letter-spacing: 1px;">Chapters</h2>
-  <ol style="list-style: decimal inside; padding-right: 0.5em;">
-    <li><a href="00-prerequisites">Prerequisites</a></li>
-    <li><a href="01-two-pointers">Two Pointers</a></li>
-    <li><a href="02-hash-maps-and-sets">Hash Maps and Sets</a></li>
-    <li><a href="03-linked-lists">Linked Lists</a></li>
-    <li><a href="04-fast-and-slow-pointers">Fast and Slow Pointers</a></li>
-    <li><a href="05-sliding-windows">Sliding Windows</a></li>
-    <li><a href="06-binary-search">Binary Search</a></li>
-    <li><a href="07-stacks-and-queues">Stacks and Queues</a></li>
-    <li><a href="08-heaps">Heaps</a></li>
-    <li><a href="09-intervals">Intervals</a></li>
-    <li><a href="10-prefix-sums">Prefix Sums</a></li>
-    <li><a href="11-trees">Trees</a></li>
-    <li><a href="12-tries">Tries</a></li>
-    <li><a href="13-graphs">Graphs</a></li>
-    <li><a href="14-backtracking">Backtracking</a></li>
-    <li><a href="15-dynamic-programming">Dynamic Programming</a></li>
-    <li><a href="16-greedy-algorithms">Greedy Algorithms</a></li>
-    <li><a href="17-sort-and-search">Sort and Search</a></li>
-    <li><a href="18-bit-manipulation">Bit Manipulation</a></li>
-    <li><a href="19-math-and-geometry">Math and Geometry</a></li>
-  </ol>
+## 🗺️ Learning Path (Curriculum)
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+
+  <div style="background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 12px; padding: 1.5rem; transition: transform 0.2s;">
+    <h3 style="margin-top: 0; color: #4338ca;">🏛️ 00. The Foundation</h3>
+    <p style="font-size: 0.9rem; color: #4b5563;">Complexity Analysis, Math, and Problem Solving basics.</p>
+    <a href="#/00-math-and-complexity/README" style="font-weight: 600; text-decoration: none; color: #4338ca;">Start Here →</a>
+  </div>
+
+  <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+    <h3 style="margin-top: 0; color: #166534;">🏃 01. Two Pointers</h3>
+    <p style="font-size: 0.9rem; color: #4b5563;">Efficiently traversing arrays and sorted sequences.</p>
+    <a href="#/01-two-pointers/README" style="font-weight: 600; text-decoration: none; color: #166534;">Open Chapter →</a>
+  </div>
+
+  <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+    <h3 style="margin-top: 0; color: #166534;">🧩 02. Hash Maps & Sets</h3>
+    <p style="font-size: 0.9rem; color: #4b5563;">Mastering O(1) lookups and frequency counting.</p>
+    <a href="#/02-hash-maps-and-sets/README" style="font-weight: 600; text-decoration: none; color: #166534;">Open Chapter →</a>
+  </div>
+
+  <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+    <h3 style="margin-top: 0; color: #166534;">🔢 10. Prefix Sums</h3>
+    <p style="font-size: 0.9rem; color: #4b5563;">Solving range queries and subarray problems.</p>
+    <a href="#/10-prefix-sums/README" style="font-weight: 600; text-decoration: none; color: #166534;">Open Chapter →</a>
+  </div>
+
+  <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+    <h3 style="margin-top: 0; color: #166534;">🌊 05. Sliding Windows</h3>
+    <p style="font-size: 0.9rem; color: #4b5563;">Optimizing subarray and substring computations.</p>
+    <a href="#/05-sliding-windows/README" style="font-weight: 600; text-decoration: none; color: #166534;">Open Chapter →</a>
+  </div>
+
+  <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+    <h3 style="margin-top: 0; color: #b91c1c;">🔗 03. Linked Lists</h3>
+    <p style="font-size: 0.9rem; color: #4b5563;">Pointers, node manipulation, and fast-slow patterns.</p>
+    <a href="#/03-linked-lists/README" style="font-weight: 600; text-decoration: none; color: #b91c1c;">Open Chapter →</a>
+  </div>
+
+  <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+    <h3 style="margin-top: 0; color: #b91c1c;">🌲 11. Trees & 🕸️ 13. Graphs</h3>
+    <p style="font-size: 0.9rem; color: #4b5563;">DFS, BFS, and hierarchical data relationships.</p>
+    <a href="#/11-trees/README" style="font-weight: 600; text-decoration: none; color: #b91c1c;">Explore →</a>
+  </div>
+
 </div>
 
 ---
+
+### 🛠️ Features of this Guide
+- ✅ **Mathematical Intuition:** শুধু কোড নয়, লজিকের পেছনের ম্যাথ।
+- ✅ **Multi-Language:** JS, TS, Go, Python, C++ সলিউশন।
+- ✅ **Clean Code:** ইন্টারভিউ স্ট্যান্ডার্ড কোড প্র্যাকটিস।
+
+---
+> "Keep solving, keep growing." – **Humayun**
 <!-- 
 ## Two Pointers
   - Problem 1: [Pair Sum Sorted](two-pointers/pair-sum-sorted/statement.md)
