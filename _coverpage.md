@@ -1,12 +1,13 @@
-# Mastering DSA <img width="60px" src="https://em-content.zobj.net/source/apple/354/books_1f4da.png" alt="book">
+# Mastering DSA <img width="60px" src="https://raw.githubusercontent.com/humayunism/Mastering-Data-Structure-and-Algorithms/main/assets/logo.png" alt="book">
 
-> A Comprehensive Guide to Data Structures & Algorithms
+> A modern, comprehensive guide to Data Structures & Algorithms
 
-* Mathematical Focus
-* Clean JavaScript & TypeScript
-* Interview Ready Q&A
+- 🚀 Beginner to Advanced
+- 📚 Multi-language Solutions
+- 🧑‍💻 Real-world Examples
+- 🌐 Open Source
 
-[Get Started](#introduction)
-[GitHub Repo](https://github.com/)
+[Get Started](#README)
+[GitHub Repo](https://github.com/humayunism/Mastering-Data-Structure-and-Algorithms)
 
-![color](#ffffff)
+![color](#f8fafc)
