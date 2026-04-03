@@ -6,29 +6,29 @@ This repo is organized by **patterns / chapters**, each chapter contains multipl
 ---
 
 ## Table of Contents
-
-1. [Two Pointers](#two-pointers)
-2. [Hash Maps and Sets](#hash-maps-and-sets)
-3. [Linked Lists](#linked-lists)
-4. [Fast and Slow Pointers](#fast-and-slow-pointers)
-5. [Sliding Windows](#sliding-windows)
-6. [Binary Search](#binary-search)
-7. [Stacks](#stacks-and-queues)
-8. [Heaps](#heaps)
-9. [Intervals](#intervals)
-10. [Prefix Sums](#prefix-sums)
-11. [Trees](#trees)
-12. [Tries](#tries)
-13. [Graphs](#graphs)
-14. [Backtracking](#backtracking)
-15. [Dynamic Programming](#dynamic-programming)
-16. [Greedy](#greedy-algorithms)
-17. [Sort and Search](#sort-and-search)
-18. [Bit Manipulation](#bit-manipulation)
-19. [Math and Geometry](#math-and-geometry)
+0. [Prerequisites](00-prerequisites/README.md)
+1. [Two Pointers](01-two-pointers/README.md)
+2. [Hash Maps and Sets](02-hash-maps-and-sets/README.md)
+3. [Linked Lists](03-linked-lists/README.md)
+4. [Fast and Slow Pointers](04-fast-and-slow-pointers/README.md)
+5. [Sliding Windows](05-sliding-windows/README.md)
+6. [Binary Search](06-binary-search/README.md)
+7. [Stacks and Queues](07-stacks-and-queues/README.md)
+8. [Heaps](08-heaps/README.md)
+9. [Intervals](09-intervals/README.md)
+10. [Prefix Sums](10-prefix-sums/README.md)
+11. [Trees](11-trees/README.md)
+12. [Tries](12-tries/README.md)
+13. [Graphs](13-graphs/README.md)
+14. [Backtracking](14-backtracking/README.md)
+15. [Dynamic Programming](15-dynamic-programming/README.md)
+16. [Greedy Algorithms](16-greedy-algorithms/README.md)
+17. [Sort and Search](17-sort-and-search/README.md)
+18. [Bit Manipulation](18-bit-manipulation/README.md)
+19. [Math and Geometry](19-math-and-geometry/README.md)
 
 ---
-
+<!-- 
 ## Two Pointers
   - Problem 1: [Pair Sum Sorted](two-pointers/pair-sum-sorted/statement.md)
   - Problem 2: [Remove Duplicates](Patterns/01-two-pointers/problem-02-remove-duplicates/statement.md)
@@ -121,4 +121,4 @@ This repo is organized by **patterns / chapters**, each chapter contains multipl
 - For large changes, open an issue first to discuss the approach.
 - If the project doesn't yet have one, consider adding a Code of Conduct and contribution templates.
 
-If you'd like, I can commit and push this change for you.
+If you'd like, I can commit and push this change for you. -->
