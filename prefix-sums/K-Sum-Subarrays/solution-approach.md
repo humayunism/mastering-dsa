@@ -1,0 +1,1 @@
+The Brute force solution to this problem involves iterating through every possible subarray and checking if their sum equals K. It takes `$O(n^2)$`
