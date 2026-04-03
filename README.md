@@ -69,7 +69,7 @@ This repo is organized by **patterns / chapters**, each chapter contains multipl
 ## Prefix Sums
  - Problem 1: [Range Sum Query](prefix-sums/range-sum-query/statement.md) | [View on LeetCode](https://leetcode.com/problems/range-sum-query-immutable/description/)
 
- - Problem 2: [Subarray Sum Equals K](prefix-sums/subarray-sum-equals-to-k/statement.md) | [View on LeetCode](https://leetcode.com/problems/subarray-sum-equals-k/description/)
+ - Problem 2: [Subarray Sum Equals K](prefix-sums/subarray-sums-equal-to-k/STATEMENT.md) | [View on LeetCode](https://leetcode.com/problems/subarray-sum-equals-k/description/)
  
  - Problem 3: [Product of Array Except Self](prefix-sums/product_of_array_except_self/statement.md) | [View on LeetCode](https://leetcode.com/problems/product-of-array-except-self/description/)
 
