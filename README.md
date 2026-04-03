@@ -5,27 +5,31 @@ This repo is organized by **patterns / chapters**, each chapter contains multipl
 
 ---
 
-## Table of Contents
-0. [Prerequisites](00-prerequisites/README.md)
-1. [Two Pointers](01-two-pointers/README.md)
-2. [Hash Maps and Sets](02-hash-maps-and-sets/README.md)
-3. [Linked Lists](03-linked-lists/README.md)
-4. [Fast and Slow Pointers](04-fast-and-slow-pointers/README.md)
-5. [Sliding Windows](05-sliding-windows/README.md)
-6. [Binary Search](06-binary-search/README.md)
-7. [Stacks and Queues](07-stacks-and-queues/README.md)
-8. [Heaps](08-heaps/README.md)
-9. [Intervals](09-intervals/README.md)
-10. [Prefix Sums](10-prefix-sums/README.md)
-11. [Trees](11-trees/README.md)
-12. [Tries](12-tries/README.md)
-13. [Graphs](13-graphs/README.md)
-14. [Backtracking](14-backtracking/README.md)
-15. [Dynamic Programming](15-dynamic-programming/README.md)
-16. [Greedy Algorithms](16-greedy-algorithms/README.md)
-17. [Sort and Search](17-sort-and-search/README.md)
-18. [Bit Manipulation](18-bit-manipulation/README.md)
-19. [Math and Geometry](19-math-and-geometry/README.md)
+<div align="right" style="margin-top: 2.5em; margin-bottom: 2.5em;">
+  <h2 style="margin-bottom: 1.2em; font-size: 1.6em; font-weight: 700; color: #3a5a40; letter-spacing: 1px;">Chapters</h2>
+  <ol style="list-style: decimal inside; padding-right: 0.5em;">
+    <li><a href="00-prerequisites">Prerequisites</a></li>
+    <li><a href="01-two-pointers">Two Pointers</a></li>
+    <li><a href="02-hash-maps-and-sets">Hash Maps and Sets</a></li>
+    <li><a href="03-linked-lists">Linked Lists</a></li>
+    <li><a href="04-fast-and-slow-pointers">Fast and Slow Pointers</a></li>
+    <li><a href="05-sliding-windows">Sliding Windows</a></li>
+    <li><a href="06-binary-search">Binary Search</a></li>
+    <li><a href="07-stacks-and-queues">Stacks and Queues</a></li>
+    <li><a href="08-heaps">Heaps</a></li>
+    <li><a href="09-intervals">Intervals</a></li>
+    <li><a href="10-prefix-sums">Prefix Sums</a></li>
+    <li><a href="11-trees">Trees</a></li>
+    <li><a href="12-tries">Tries</a></li>
+    <li><a href="13-graphs">Graphs</a></li>
+    <li><a href="14-backtracking">Backtracking</a></li>
+    <li><a href="15-dynamic-programming">Dynamic Programming</a></li>
+    <li><a href="16-greedy-algorithms">Greedy Algorithms</a></li>
+    <li><a href="17-sort-and-search">Sort and Search</a></li>
+    <li><a href="18-bit-manipulation">Bit Manipulation</a></li>
+    <li><a href="19-math-and-geometry">Math and Geometry</a></li>
+  </ol>
+</div>
 
 ---
 <!-- 
