@@ -7,14 +7,86 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+      color: #22223b;
+      margin: 0;
+    }
+    #app {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #22223b;
+    }
+    .cover-main {
+      background: #fff;
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 32px rgba(60,72,100,0.12);
+      padding: 2.5rem 2rem 2rem 2rem;
+      max-width: 480px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+    .cover-main h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #3a5a40;
+    }
+    .cover-main p {
+      color: #495057;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .cover-main .cta {
+      display: inline-block;
+      background: linear-gradient(90deg, #3a5a40 0%, #588157 100%);
+      color: #fff;
+      font-weight: 600;
+      padding: 0.75rem 2.5rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: background 0.2s;
+      margin-top: 1rem;
+    }
+    .cover-main .cta:hover {
+      background: linear-gradient(90deg, #588157 0%, #3a5a40 100%);
+    }
+    .cover-main img {
+      width: 90px;
+      margin-bottom: 1.2rem;
+    }
+    @media (max-width: 600px) {
+      .cover-main {
+        padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+      }
+      .cover-main h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div id="app">Loading the book...</div>
+  <div id="app">
+    <div class="cover-main">
+      <img src="https://raw.githubusercontent.com/humayunism/mastering-dsa/main/assets/logo.png" alt="Mastering DSA Logo" />
+      <h1>Mastering DSA</h1>
+      <p>A modern, comprehensive guide to Data Structures & Algorithms.<br>Multi-language solutions, real-world examples, and more.</p>
+      <a class="cta" href="#README">Get Started</a>
+    </div>
+  </div>
   <script>
     window.$docsify = {
       name: 'Mastering DSA',
-      repo: '', // আপাতত খালি রাখো, পরে তোমার গিটহাব লিঙ্ক দেব
+      repo: '',
       loadSidebar: true,
       subMaxLevel: 2,
       coverpage: true,
