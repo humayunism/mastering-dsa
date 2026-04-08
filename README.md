@@ -1,7 +1,7 @@
-#  Mastering Data Structures & Algorithms
-## THINK  FEEL  CODE
+# Mastering Data Structures & Algorithms
+## THINK | FEEL | CODE
 
-Welcome! This repository organizes all essential DSA patterns into 20 chapters. Each chapter is designed with mathematical foundations and multi-language solutions.
+Welcome to the ultimate guide for mastering Data Structures and Algorithms! This repository is structured into 20 comprehensive chapters, each focusing on mathematical foundations, real-world applications, and multi-language solutions.
 
 ---
 
