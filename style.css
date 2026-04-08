@@ -1,8 +1,8 @@
 /* General Styles */
 body {
   font-family: 'Merriweather', serif;
-  background: #fdf6e3;
-  color: #333;
+  background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
+  color: #37474f;
   margin: 0;
   line-height: 1.6;
 }
@@ -16,7 +16,7 @@ body {
 
 .sidebar {
   width: 300px;
-  background: #f4f4f4;
+  background: #cfd8dc;
   border-right: 1px solid #ddd;
   padding: 1rem;
   position: sticky;
@@ -28,8 +28,8 @@ body {
 .content {
   flex: 1;
   padding: 2rem;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 1rem;
   border-radius: 8px;
 }
