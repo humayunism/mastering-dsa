@@ -26,6 +26,7 @@
 
     .sidebar {
       width: 300px;
+      flex-shrink: 0;
       background: #f4f4f4;
       border-right: 1px solid #ddd;
       padding: 1rem;
@@ -42,6 +43,7 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       margin: 1rem;
       border-radius: 8px;
+      min-width: 0;
     }
 
     h1, h2, h3 {
@@ -60,6 +62,8 @@
     .navigation {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
       margin-top: 2rem;
     }
 
@@ -75,6 +79,7 @@
       background: #2980b9;
     }
 
+    /* ── Chapter Grid ── */
     .chapter-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -111,6 +116,20 @@
       text-decoration: underline;
     }
 
+    /* ── Responsive ── */
+
+    /* Large tablets */
+    @media (max-width: 1024px) {
+      .sidebar {
+        width: 240px;
+      }
+
+      .chapter-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+    }
+
+    /* Tablets */
     @media (max-width: 768px) {
       #app {
         flex-direction: column;
@@ -120,11 +139,67 @@
         width: 100%;
         height: auto;
         position: relative;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
       }
 
       .content {
+        margin: 0.5rem;
+        border-radius: 8px;
+        padding: 1.25rem;
+      }
+
+      .chapter-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin: 1rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Mobile phones */
+    @media (max-width: 480px) {
+      .content {
         margin: 0;
         border-radius: 0;
+        padding: 1rem;
+      }
+
+      .chapter-grid {
+        grid-template-columns: 1fr;
+        gap: 0.875rem;
+        margin: 0.75rem 0;
+      }
+
+      .chapter-card {
+        padding: 1.1rem 1rem;
+      }
+
+      h1 {
+        font-size: 1.3rem;
+        margin-top: 1rem;
+      }
+
+      .navigation {
+        flex-direction: column;
+      }
+
+      .navigation a {
+        text-align: center;
+      }
+    }
+
+    /* Very small screens */
+    @media (max-width: 360px) {
+      .chapter-card h3 {
+        font-size: 0.95rem;
+      }
+
+      h1 {
+        font-size: 1.15rem;
       }
     }
   </style>

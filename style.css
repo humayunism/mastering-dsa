@@ -23,6 +23,7 @@ body {
   top: 0;
   height: 100vh;
   overflow-y: auto;
+  flex-shrink: 0;
 }
 
 .content {
@@ -32,6 +33,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 1rem;
   border-radius: 8px;
+  min-width: 0; /* prevent flex overflow */
 }
 
 /* Typography */
@@ -53,6 +55,8 @@ a:hover {
   display: flex;
   justify-content: space-between;
   margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .navigation a {
@@ -67,31 +71,20 @@ a:hover {
   background: #2980b9;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  #app {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-
-  .content {
-    margin: 0;
-    border-radius: 0;
-  }
-}
-
-/* Styles for README.md */
-
+/* ─── Learning Path / Chapter Grid ─── */
 .learning-path {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
+}
+
+/* Also targets the grid used directly in index.html */
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem;
 }
 
 .chapter-card {
@@ -101,6 +94,11 @@ a:hover {
   padding: 1.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
+}
+
+/* index.html centers the cards */
+.chapter-grid .chapter-card {
+  text-align: center;
 }
 
 .chapter-card:hover {
@@ -125,4 +123,102 @@ a:hover {
 
 .chapter-card a:hover {
   text-decoration: underline;
+}
+
+/* ─── Responsive Breakpoints ─── */
+
+/* Large tablets / small laptops */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 240px;
+  }
+
+  .learning-path,
+  .chapter-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  #app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .content {
+    margin: 0.5rem;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .learning-path,
+  .chapter-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .content {
+    margin: 0;
+    border-radius: 0;
+    padding: 1rem;
+  }
+
+  .learning-path,
+  .chapter-grid {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+    margin: 0.75rem 0;
+  }
+
+  .chapter-card {
+    padding: 1.1rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+  }
+
+  .navigation {
+    flex-direction: column;
+  }
+
+  .navigation a {
+    text-align: center;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .chapter-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .chapter-card p {
+    font-size: 0.82rem;
+  }
+
+  h1 {
+    font-size: 1.15rem;
+  }
 }
