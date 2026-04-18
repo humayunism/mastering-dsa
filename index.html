@@ -150,9 +150,9 @@
             let currentIndex = -1;
 
             CHAPTERS.forEach(function (ch, i) {
-              /* Match path fragment against hash */
+              /* Match full path fragment against hash — exact match to avoid prefix collisions */
               const fragment = ch.path.replace('#', '');
-              if (hash.includes(fragment.split('/')[1])) {
+              if (hash === fragment || hash.startsWith(fragment)) {
                 currentIndex = i;
               }
             });
