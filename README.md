@@ -76,15 +76,9 @@ Welcome to the ultimate guide for mastering Data Structures and Algorithms! This
   </div>
 
   <div class="chapter-card">
-    <h3>🌲 11. Trees</h3>
+    <h3>🌲 11. Tries</h3>
     <p>Grow your knowledge: Traverse hierarchical data structures.</p>
     <a href="#/11-trees/README">Open Chapter →</a>
-  </div>
-
-  <div class="chapter-card">
-    <h3>📖 12. Tries</h3>
-    <p>Retrieve efficiently: Explore information retrieval structures.</p>
-    <a href="#/11-trees/tries/README">Open Chapter →</a>
   </div>
 
   <div class="chapter-card">
@@ -139,4 +133,4 @@ Welcome to the ultimate guide for mastering Data Structures and Algorithms! This
 - ✅ **Clean Code:** Interview-standard code practices.
 
 ---
-> "Think, Feel, Code" – **Humayun Kabir**
+> "Think, Feel, Code" – **HUMAYUN KABIR**

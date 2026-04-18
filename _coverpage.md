@@ -7,7 +7,7 @@
 - 🧑‍💻 Real-world Examples
 - 🌐 Open Source
 
-[Get Started](#README)
+[Get Started](#/)
 [GitHub Repo](https://github.com/humayunism/Mastering-Data-Structure-and-Algorithms)
 
 ![color](#f8fafc)
