@@ -1,224 +1,370 @@
-/* General Styles */
-body {
-  font-family: 'Merriweather', serif;
-  background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
-  color: #37474f;
+/* ═══════════════════════════════════════════════
+   Mastering DSA — Modern Classic Theme
+   by Humayun Kabir
+   ═══════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+  --bg-page:        #0e0f13;
+  --bg-surface:     #15171d;
+  --bg-card:        #1c1f28;
+  --bg-card-hover:  #21252f;
+  --border:         rgba(255, 255, 255, 0.07);
+  --border-hover:   rgba(255, 255, 255, 0.15);
+
+  --text-primary:   #f0ede6;
+  --text-secondary: #8b8d96;
+  --text-muted:     #4a4c56;
+
+  --accent-purple:  #9b8cff;
+  --accent-teal:    #3fd9a0;
+  --accent-coral:   #ff7c5c;
+  --accent-blue:    #5ca8ff;
+  --accent-amber:   #f5b83d;
+  --accent-pink:    #f06fa0;
+
+  --font-display:   'Playfair Display', Georgia, serif;
+  --font-body:      'DM Sans', sans-serif;
+  --font-mono:      'JetBrains Mono', monospace;
+
+  --radius-sm:      6px;
+  --radius-md:      10px;
+  --radius-lg:      14px;
+
+  --transition:     0.18s ease;
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
-  line-height: 1.6;
+  padding: 0;
 }
 
-/* Layout */
-#app {
-  display: flex;
-  flex-direction: row;
-  min-height: 100vh;
+html {
+  scroll-behavior: smooth;
 }
 
+body {
+  font-family: var(--font-body);
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Docsify Sidebar Override ── */
 .sidebar {
-  width: 300px;
-  background: #cfd8dc;
-  border-right: 1px solid #ddd;
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow-y: auto;
-  flex-shrink: 0;
+  background: var(--bg-surface) !important;
+  border-right: 1px solid var(--border) !important;
+  font-family: var(--font-body) !important;
 }
 
+.sidebar ul li a {
+  color: var(--text-secondary) !important;
+  font-size: 13px !important;
+  transition: color var(--transition) !important;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li.active > a {
+  color: var(--accent-purple) !important;
+}
+
+.sidebar-toggle {
+  background: var(--bg-surface) !important;
+}
+
+/* ── Docsify Main Content ── */
 .content {
-  flex: 1;
-  padding: 2rem;
-  background: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 1rem;
-  border-radius: 8px;
-  min-width: 0; /* prevent flex overflow */
+  background: var(--bg-page) !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
 }
 
-/* Typography */
-h1, h2, h3 {
-  color: #2c3e50;
+main {
+  background: var(--bg-page) !important;
 }
 
+/* ── Links ── */
 a {
-  color: #3498db;
+  color: var(--accent-blue);
   text-decoration: none;
+  transition: color var(--transition);
 }
 
 a:hover {
-  text-decoration: underline;
+  color: var(--accent-purple);
 }
 
-/* Navigation */
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+/* ── Headings ── */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  line-height: 1.3;
 }
 
-.navigation a {
-  background: #3498db;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  text-decoration: none;
+h1 { font-size: 2.2rem; font-weight: 600; margin-bottom: 0.5rem; }
+h2 { font-size: 1.6rem; font-weight: 500; margin: 2rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+h3 { font-size: 1.15rem; font-weight: 500; margin: 1.5rem 0 0.5rem; }
+
+/* ── Code ── */
+code, pre {
+  font-family: var(--font-mono) !important;
+  font-size: 13px !important;
 }
 
-.navigation a:hover {
-  background: #2980b9;
+code {
+  background: rgba(255,255,255,0.07) !important;
+  color: var(--accent-teal) !important;
+  padding: 2px 7px !important;
+  border-radius: var(--radius-sm) !important;
 }
 
-/* ─── Learning Path / Chapter Grid ─── */
-.learning-path {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+pre {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 1.2rem 1.4rem !important;
+  overflow-x: auto;
+  margin: 1.5rem 0 !important;
 }
 
-/* Also targets the grid used directly in index.html */
+pre code {
+  background: transparent !important;
+  padding: 0 !important;
+  color: var(--text-primary) !important;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  border-left: 3px solid var(--accent-purple) !important;
+  background: rgba(155, 140, 255, 0.05) !important;
+  padding: 0.8rem 1.2rem !important;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0 !important;
+  color: var(--text-secondary) !important;
+  font-style: italic;
+  margin: 1.5rem 0 !important;
+}
+
+/* ── Tables ── */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+  font-size: 13.5px;
+}
+
+th {
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+}
+
+td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+tr:hover td {
+  background: rgba(255,255,255,0.02);
+}
+
+/* ── Homepage: Chapter Grid ── */
 .chapter-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
 }
 
 .chapter-card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.3rem 1.4rem;
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+  position: relative;
+  overflow: hidden;
+  text-align: left;
 }
 
-/* index.html centers the cards */
-.chapter-grid .chapter-card {
-  text-align: center;
+.chapter-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  opacity: 0.9;
 }
 
 .chapter-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
 }
+
+/* Accent colors cycling */
+.chapter-card:nth-child(6n+1)::before { background: var(--accent-purple); }
+.chapter-card:nth-child(6n+2)::before { background: var(--accent-teal); }
+.chapter-card:nth-child(6n+3)::before { background: var(--accent-coral); }
+.chapter-card:nth-child(6n+4)::before { background: var(--accent-blue); }
+.chapter-card:nth-child(6n+5)::before { background: var(--accent-amber); }
+.chapter-card:nth-child(6n+6)::before { background: var(--accent-pink); }
 
 .chapter-card h3 {
-  margin-top: 0;
-  color: #2c3e50;
-}
-
-.chapter-card p {
-  font-size: 0.9rem;
-  color: #4b5563;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0 0 8px;
+  line-height: 1.4;
 }
 
 .chapter-card a {
-  font-weight: 600;
-  text-decoration: none;
-  color: #3498db;
+  display: inline-block;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
 }
 
 .chapter-card a:hover {
-  text-decoration: underline;
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  background: rgba(255,255,255,0.05);
 }
 
-/* ─── Responsive Breakpoints ─── */
+/* ── Homepage Hero ── */
+#app > h1 {
+  font-family: var(--font-display) !important;
+  font-size: 2.4rem !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+  text-align: center !important;
+  margin: 3rem 0 0.5rem !important;
+  letter-spacing: -0.01em;
+}
 
-/* Large tablets / small laptops */
+#app > p {
+  text-align: center !important;
+  color: var(--text-secondary) !important;
+  font-size: 13px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  font-family: var(--font-mono) !important;
+  margin-bottom: 2rem !important;
+}
+
+/* ── Prev / Next Navigation ── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3rem 0 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+}
+
+.nav-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+.nav-btn.prev::before { content: '←'; font-size: 15px; }
+.nav-btn.next::after  { content: '→'; font-size: 15px; }
+
+.nav-progress {
+  text-align: center;
+  flex: 1;
+}
+
+.nav-progress span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.nav-progress-bar {
+  width: 100px;
+  height: 2px;
+  background: var(--border);
+  border-radius: 99px;
+  margin: 6px auto 0;
+  overflow: hidden;
+}
+
+.nav-progress-fill {
+  height: 100%;
+  background: var(--accent-purple);
+  border-radius: 99px;
+  transition: width 0.3s ease;
+}
+
+/* ── Docsify Navigation Override ── */
+.app-nav {
+  background: var(--bg-surface) !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+.app-nav a {
+  color: var(--text-secondary) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 12px !important;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ── Responsive ── */
 @media (max-width: 1024px) {
-  .sidebar {
-    width: 240px;
-  }
-
-  .learning-path,
-  .chapter-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
+  .chapter-grid { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
 }
 
-/* Tablets */
 @media (max-width: 768px) {
-  #app {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .content {
-    margin: 0.5rem;
-    border-radius: 8px;
-    padding: 1.25rem;
-  }
-
-  .learning-path,
-  .chapter-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin: 1rem;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  h2 {
-    font-size: 1.25rem;
-  }
+  h1 { font-size: 1.7rem; }
+  .chapter-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .chapter-nav { flex-direction: column; align-items: stretch; }
+  .nav-btn { justify-content: center; }
 }
 
-/* Mobile phones */
 @media (max-width: 480px) {
-  .content {
-    margin: 0;
-    border-radius: 0;
-    padding: 1rem;
-  }
-
-  .learning-path,
-  .chapter-grid {
-    grid-template-columns: 1fr;
-    gap: 0.875rem;
-    margin: 0.75rem 0;
-  }
-
-  .chapter-card {
-    padding: 1.1rem 1rem;
-  }
-
-  h1 {
-    font-size: 1.3rem;
-    margin-top: 1rem;
-  }
-
-  .navigation {
-    flex-direction: column;
-  }
-
-  .navigation a {
-    text-align: center;
-  }
-}
-
-/* Very small screens */
-@media (max-width: 360px) {
-  .chapter-card h3 {
-    font-size: 0.95rem;
-  }
-
-  .chapter-card p {
-    font-size: 0.82rem;
-  }
-
-  h1 {
-    font-size: 1.15rem;
-  }
+  .chapter-grid { grid-template-columns: 1fr; }
+  h1 { font-size: 1.4rem; }
+  #app > h1 { font-size: 1.6rem !important; }
 }

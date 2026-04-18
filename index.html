@@ -1,311 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <title>Mastering DSA | by Humayun Kabir</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: 'Merriweather', serif;
-      background: #fdf6e3;
-      color: #333;
-      margin: 0;
-      line-height: 1.6;
-    }
-
-    #app {
-      display: flex;
-      flex-direction: row;
-      min-height: 100vh;
-    }
-
-    .sidebar {
-      width: 300px;
-      flex-shrink: 0;
-      background: #f4f4f4;
-      border-right: 1px solid #ddd;
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      overflow-y: auto;
-    }
-
-    .content {
-      flex: 1;
-      padding: 2rem;
-      background: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      margin: 1rem;
-      border-radius: 8px;
-      min-width: 0;
-    }
-
-    h1, h2, h3 {
-      color: #2c3e50;
-    }
-
-    a {
-      color: #3498db;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .navigation {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 2rem;
-    }
-
-    .navigation a {
-      background: #3498db;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      text-decoration: none;
-    }
-
-    .navigation a:hover {
-      background: #2980b9;
-    }
-
-    /* ── Chapter Grid ── */
-    .chapter-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem;
-    }
-
-    .chapter-card {
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s;
-      text-align: center;
-    }
-
-    .chapter-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .chapter-card h3 {
-      margin-top: 0;
-      color: #2c3e50;
-    }
-
-    .chapter-card a {
-      font-weight: 600;
-      text-decoration: none;
-      color: #3498db;
-    }
-
-    .chapter-card a:hover {
-      text-decoration: underline;
-    }
-
-    /* ── Responsive ── */
-
-    /* Large tablets */
-    @media (max-width: 1024px) {
-      .sidebar {
-        width: 240px;
-      }
-
-      .chapter-grid {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      }
-    }
-
-    /* Tablets */
-    @media (max-width: 768px) {
-      #app {
-        flex-direction: column;
-      }
-
-      .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        border-right: none;
-        border-bottom: 1px solid #ddd;
-      }
-
-      .content {
-        margin: 0.5rem;
-        border-radius: 8px;
-        padding: 1.25rem;
-      }
-
-      .chapter-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        margin: 1rem;
-      }
-
-      h1 {
-        font-size: 1.5rem;
-      }
-    }
-
-    /* Mobile phones */
-    @media (max-width: 480px) {
-      .content {
-        margin: 0;
-        border-radius: 0;
-        padding: 1rem;
-      }
-
-      .chapter-grid {
-        grid-template-columns: 1fr;
-        gap: 0.875rem;
-        margin: 0.75rem 0;
-      }
-
-      .chapter-card {
-        padding: 1.1rem 1rem;
-      }
-
-      h1 {
-        font-size: 1.3rem;
-        margin-top: 1rem;
-      }
-
-      .navigation {
-        flex-direction: column;
-      }
-
-      .navigation a {
-        text-align: center;
-      }
-    }
-
-    /* Very small screens */
-    @media (max-width: 360px) {
-      .chapter-card h3 {
-        font-size: 0.95rem;
-      }
-
-      h1 {
-        font-size: 1.15rem;
-      }
-    }
-  </style>
 </head>
-
 <body>
   <div id="app">
-    <h1 style="text-align: center; margin-top: 2rem;">Mastering Data Structures & Algorithms</h1>
-    <p style="text-align: center;">Explore all chapters below:</p>
+    <h1>Mastering Data Structures &amp; Algorithms</h1>
+    <p>20 Chapters · JS · TS · Python · Go · C++</p>
 
     <div class="chapter-grid">
       <div class="chapter-card">
         <h3>🏛️ 00. The Foundation</h3>
         <a href="#/00-prerequisites/README">Start Here →</a>
       </div>
-
       <div class="chapter-card">
         <h3>🏃 01. Two Pointers</h3>
         <a href="#/01-two-pointers/README">Open Chapter →</a>
       </div>
-
       <div class="chapter-card">
-        <h3>🧩 02. Hash Maps & Sets</h3>
+        <h3>🧩 02. Hash Maps &amp; Sets</h3>
         <a href="#/02-hash-maps-and-sets/README">Open Chapter →</a>
       </div>
-
       <div class="chapter-card">
         <h3>🔗 03. Linked Lists</h3>
         <a href="#/03-linked-lists/README">Open Chapter →</a>
       </div>
-
       <div class="chapter-card">
         <h3>🌊 04. Fast and Slow Pointers</h3>
         <a href="#/04-fast-and-slow-pointers/README">Open Chapter →</a>
       </div>
-
       <div class="chapter-card">
         <h3>🔢 05. Sliding Windows</h3>
         <a href="#/05-sliding-windows/README">Open Chapter →</a>
       </div>
-
       <div class="chapter-card">
         <h3>🔍 06. Binary Search</h3>
         <a href="#/06-binary-search/README">Open Chapter →</a>
       </div>
-
       <div class="chapter-card">
         <h3>📚 07. Stacks and Queues</h3>
         <a href="#/07-stacks-and-queues/README">Open Chapter →</a>
       </div>
-
       <div class="chapter-card">
         <h3>⛰️ 08. Heaps</h3>
         <a href="#/08-heaps/README">Open Chapter →</a>
       </div>
-
       <div class="chapter-card">
         <h3>📏 09. Intervals</h3>
         <a href="#/09-intervals/README">Open Chapter →</a>
       </div>
-
       <div class="chapter-card">
         <h3>🔢 10. Prefix Sums</h3>
         <a href="#/10-prefix-sums/README">Open Chapter →</a>
       </div>
-
       <div class="chapter-card">
         <h3>🌲 11. Trees</h3>
         <a href="#/11-trees/README">Open Chapter →</a>
       </div>
-
       <div class="chapter-card">
         <h3>📖 12. Tries</h3>
         <a href="#/11-trees/tries/README">Open Chapter →</a>
       </div>
-
       <div class="chapter-card">
         <h3>🕸️ 13. Graphs</h3>
         <a href="#/13-graphs/README">Open Chapter →</a>
       </div>
-
       <div class="chapter-card">
         <h3>🔄 14. Backtracking</h3>
         <a href="#/14-backtracking/README">Open Chapter →</a>
       </div>
-
       <div class="chapter-card">
         <h3>📊 15. Dynamic Programming</h3>
         <a href="#/15-dynamic-programming/README">Open Chapter →</a>
       </div>
-
       <div class="chapter-card">
         <h3>⚡ 16. Greedy Algorithms</h3>
         <a href="#/16-greedy-algorithms/README">Open Chapter →</a>
       </div>
-
       <div class="chapter-card">
         <h3>🔀 17. Sort and Search</h3>
         <a href="#/17-sort-and-search/README">Open Chapter →</a>
       </div>
-
       <div class="chapter-card">
         <h3>💡 18. Bit Manipulation</h3>
         <a href="#/18-bit-manipulation/README">Open Chapter →</a>
       </div>
-
       <div class="chapter-card">
         <h3>📐 19. Math and Geometry</h3>
         <a href="#/19-math-and-geometry/README">Open Chapter →</a>
@@ -314,17 +100,102 @@
   </div>
 
   <script>
+    /* ── Chapter list (order matters) ── */
+    const CHAPTERS = [
+      { label: '00. The Foundation',        path: '#/00-prerequisites/README' },
+      { label: '01. Two Pointers',           path: '#/01-two-pointers/README' },
+      { label: '02. Hash Maps & Sets',       path: '#/02-hash-maps-and-sets/README' },
+      { label: '03. Linked Lists',           path: '#/03-linked-lists/README' },
+      { label: '04. Fast & Slow Pointers',   path: '#/04-fast-and-slow-pointers/README' },
+      { label: '05. Sliding Windows',        path: '#/05-sliding-windows/README' },
+      { label: '06. Binary Search',          path: '#/06-binary-search/README' },
+      { label: '07. Stacks and Queues',      path: '#/07-stacks-and-queues/README' },
+      { label: '08. Heaps',                  path: '#/08-heaps/README' },
+      { label: '09. Intervals',              path: '#/09-intervals/README' },
+      { label: '10. Prefix Sums',            path: '#/10-prefix-sums/README' },
+      { label: '11. Trees',                  path: '#/11-trees/README' },
+      { label: '12. Tries',                  path: '#/11-trees/tries/README' },
+      { label: '13. Graphs',                 path: '#/13-graphs/README' },
+      { label: '14. Backtracking',           path: '#/14-backtracking/README' },
+      { label: '15. Dynamic Programming',    path: '#/15-dynamic-programming/README' },
+      { label: '16. Greedy Algorithms',      path: '#/16-greedy-algorithms/README' },
+      { label: '17. Sort and Search',        path: '#/17-sort-and-search/README' },
+      { label: '18. Bit Manipulation',       path: '#/18-bit-manipulation/README' },
+      { label: '19. Math and Geometry',      path: '#/19-math-and-geometry/README' },
+    ];
+
+    /* ── Docsify config ── */
     window.$docsify = {
-      name: 'Mastering Data Structures & Algorithms',
+      name: 'Mastering DSA',
       repo: '',
       loadSidebar: true,
       subMaxLevel: 2,
       coverpage: false,
       auto2top: true,
       homepage: 'README.md',
+
+      /* Inject Prev/Next nav after every page renders */
+      plugins: [
+        function (hook) {
+          hook.afterEach(function (html) {
+            return html + '<div id="chapter-nav-inject"></div>';
+          });
+
+          hook.doneEach(function () {
+            const container = document.getElementById('chapter-nav-inject');
+            if (!container) return;
+
+            /* Detect current chapter from hash */
+            const hash = decodeURIComponent(window.location.hash || '');
+            let currentIndex = -1;
+
+            CHAPTERS.forEach(function (ch, i) {
+              /* Match path fragment against hash */
+              const fragment = ch.path.replace('#', '');
+              if (hash.includes(fragment.split('/')[1])) {
+                currentIndex = i;
+              }
+            });
+
+            /* Build nav HTML */
+            const prev = currentIndex > 0 ? CHAPTERS[currentIndex - 1] : null;
+            const next = currentIndex >= 0 && currentIndex < CHAPTERS.length - 1
+                          ? CHAPTERS[currentIndex + 1]
+                          : null;
+
+            const total   = CHAPTERS.length;
+            const current = currentIndex + 1;
+            const pct     = currentIndex >= 0 ? Math.round((current / total) * 100) : 0;
+
+            const prevBtn = prev
+              ? '<a class="nav-btn prev" href="' + prev.path + '">' + prev.label + '</a>'
+              : '<span class="nav-btn prev" style="opacity:0.3;cursor:default;">Start</span>';
+
+            const nextBtn = next
+              ? '<a class="nav-btn next" href="' + next.path + '">' + next.label + '</a>'
+              : '<span class="nav-btn next" style="opacity:0.3;cursor:default;">End</span>';
+
+            const progressLabel = currentIndex >= 0
+              ? 'Chapter ' + current + ' of ' + total
+              : 'Table of Contents';
+
+            container.innerHTML =
+              '<div class="chapter-nav">' +
+                prevBtn +
+                '<div class="nav-progress">' +
+                  '<span>' + progressLabel + '</span>' +
+                  '<div class="nav-progress-bar">' +
+                    '<div class="nav-progress-fill" style="width:' + pct + '%"></div>' +
+                  '</div>' +
+                '</div>' +
+                nextBtn +
+              '</div>';
+          });
+        }
+      ]
     };
   </script>
+
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
 </body>
-
 </html>
