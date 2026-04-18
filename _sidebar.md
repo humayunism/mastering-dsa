@@ -9,6 +9,7 @@
 
 - **🏃 01. Two Pointers**
   - [Overview](/01-two-pointers/README)
+  - [Pair Sum Sorted](/01-two-pointers/pair-sum-sorted/statement)
 
 - **🧩 02. Hash Maps & Sets**
   - [Overview](/02-hash-maps-and-sets/README)
@@ -36,6 +37,10 @@
 
 - **🔢 10. Prefix Sums**
   - [Overview](/10-prefix-sums/README)
+  - [Product of Array Except Self](/10-prefix-sums/product_of_array_except_self/statement)
+  - [Range Sum Query](/10-prefix-sums/range-sum-query/statement)
+  - [Subarray Sums Equal to K](/10-prefix-sums/subarray-sums-equal-to-k/STATEMENT)
+  - [Subarray Sums — Solution Approach](/10-prefix-sums/subarray-sums-equal-to-k/solution-approach)
 
 - **🌲 11. Trees**
   - [Overview](/11-trees/README)
@@ -57,9 +62,12 @@
 
 - **🔀 17. Sort & Search**
   - [Overview](/17-sort-and-search/README)
+  - [Bubble Sort](/17-sort-and-search/bubble-sort/statement)
 
 - **💡 18. Bit Manipulation**
   - [Overview](/18-bit-manipulation/README)
 
 - **📐 19. Math & Geometry**
   - [Overview](/19-math-and-geometry/README)
+  - [Max Points on a Line](/19-math-and-geometry/max-points-on-a-line/statement)
+  - [Smallest Integer Divisible by K](/19-math-and-geometry/smallest-integer-divisible-by-k/statement)
