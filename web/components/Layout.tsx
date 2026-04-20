@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Moon, Sun, Search } from 'lucide-react';
+import { Menu, X, Moon, Sun, Search, BookOpen } from 'lucide-react';
 import styles from './Layout.module.css';
 
 interface Chapter {
@@ -14,15 +14,15 @@ interface LayoutProps {
   children: React.ReactNode;
   chapters: Chapter[];
   currentChapter?: string;
+  hideNav?: boolean;
 }
 
-export default function Layout({ children, chapters, currentChapter }: LayoutProps) {
+export default function Layout({ children, chapters, currentChapter, hideNav = false }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    // Check for saved theme preference
     const saved = localStorage.getItem('theme');
     if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       setDarkMode(true);
@@ -50,23 +50,27 @@ export default function Layout({ children, chapters, currentChapter }: LayoutPro
       {/* Header */}
       <header className={styles.header}>
         <div className={styles.headerContent}>
-          <button
-            className={styles.menuButton}
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-            aria-label="Toggle sidebar"
-          >
-            {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className={styles.headerLeft}>
+            <button
+              className={styles.menuButton}
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+              aria-label="Toggle sidebar"
+            >
+              {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
 
-          <Link href="/" className={styles.logo}>
-            <h1>📚 Mastering DSA</h1>
-          </Link>
+            <Link href="/" className={styles.logo}>
+              <BookOpen size={28} />
+              <span>Mastering DSA</span>
+            </Link>
+          </div>
 
           <div className={styles.headerControls}>
             <button
               className={styles.themeToggle}
               onClick={toggleDarkMode}
               aria-label="Toggle dark mode"
+              title={darkMode ? 'Light mode' : 'Dark mode'}
             >
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
@@ -84,10 +88,17 @@ export default function Layout({ children, chapters, currentChapter }: LayoutPro
               placeholder="Search chapters..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
+              aria-label="Search chapters"
             />
           </div>
 
           <nav className={styles.nav}>
+            <Link href="/" className={styles.navHome} onClick={() => setSidebarOpen(false)}>
+              📚 Home
+            </Link>
+            
+            <div className={styles.navSeparator} />
+            
             {filteredChapters.map((chapter) => (
               <Link
                 key={chapter.slug}
@@ -96,6 +107,7 @@ export default function Layout({ children, chapters, currentChapter }: LayoutPro
                   currentChapter === chapter.slug ? styles.active : ''
                 }`}
                 onClick={() => setSidebarOpen(false)}
+                title={chapter.title}
               >
                 <span className={styles.navNumber}>{chapter.number}</span>
                 <span className={styles.navTitle}>{chapter.title}</span>
@@ -115,6 +127,7 @@ export default function Layout({ children, chapters, currentChapter }: LayoutPro
         <div
           className={styles.overlay}
           onClick={() => setSidebarOpen(false)}
+          aria-hidden="true"
         />
       )}
     </div>

@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Layout from '../../../components/Layout';
-import { getChapters, getProblemContent, getChapterProblems } from '../../../lib/markdown';
-import styles from './problem.module.css';
+import Layout from '../../components/Layout';
+import { getChapters, getProblemContent, getChapterProblems } from '../../lib/markdown';
+import styles from '../problem.module.css';
 
 interface ProblemPageProps {
   chapter: {

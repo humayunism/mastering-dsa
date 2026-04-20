@@ -1,12 +1,21 @@
 {
   "name": "mastering-dsa-book",
   "version": "1.0.0",
-  "description": "Mastering Data Structures and Algorithms - Interactive Book",
+  "description": "Mastering Data Structures and Algorithms - Interactive Book with Next.js",
+  "author": "Humayun Kabir",
+  "license": "MIT",
+  "homepage": "https://mastering-dsa.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/humayunism/mastering-dsa.git"
+  },
+  "keywords": ["dsa", "data-structures", "algorithms", "learning", "book"],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "next": "^14.0.0",
@@ -31,5 +40,17 @@
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "typescript": "^5.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
