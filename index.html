@@ -57,6 +57,23 @@
       return -1;
     }
 
+    function markChapterAsRead() {
+      const chapterIndex = getCurrentChapterIndex();
+      if (chapterIndex >= 0) {
+        let readChapters = JSON.parse(localStorage.getItem('readChapters') || '[]');
+        const chapterPath = CHAPTERS[chapterIndex].path;
+        if (readChapters.indexOf(chapterPath) === -1) {
+          readChapters.push(chapterPath);
+          localStorage.setItem('readChapters', JSON.stringify(readChapters));
+        }
+      }
+    }
+
+    function isChapterRead(chapterPath) {
+      const readChapters = JSON.parse(localStorage.getItem('readChapters') || '[]');
+      return readChapters.indexOf(chapterPath) !== -1;
+    }
+
     function buildReaderBar() {
       const docsifyApp = document.querySelector('.app');
       if (!docsifyApp) return;
@@ -75,11 +92,16 @@
       const progressText = currentChapter
         ? 'Chapter ' + (chapterIndex + 1) + ' of ' + CHAPTERS.length
         : 'Browse all chapters';
+      
+      markChapterAsRead();
+      
+      const readCount = CHAPTERS.filter(function(ch) { return isChapterRead(ch.path); }).length;
+      const readPercentage = Math.round((readCount / CHAPTERS.length) * 100);
 
       bar.innerHTML =
         '<div class="reader-bar__inner">' +
           '<div class="reader-bar__meta">' +
-            '<span class="reader-bar__eyebrow">Mastering DSA</span>' +
+            '<span class="reader-bar__eyebrow">Mastering DSA • ' + readPercentage + '% Complete (' + readCount + '/' + CHAPTERS.length + ')</span>' +
             '<strong class="reader-bar__title">' + chapterLabel + '</strong>' +
           '</div>' +
           '<div class="reader-bar__controls">' +
@@ -87,7 +109,8 @@
             '<select id="chapter-select" class="reader-select" aria-label="Jump to chapter">' +
               '<option value="#/">' + progressText + '</option>' +
               CHAPTERS.map(function (chapter) {
-                return '<option value="' + chapter.path + '">' + chapter.label + '</option>';
+                const mark = isChapterRead(chapter.path) ? '✓ ' : '';
+                return '<option value="' + chapter.path + '">' + mark + chapter.label + '</option>';
               }).join('') +
             '</select>' +
             '<button id="focus-toggle" class="reader-action" type="button" aria-pressed="false">Focus mode</button>' +
@@ -138,13 +161,18 @@
       const total = CHAPTERS.length;
       const progress = current > 0 ? Math.round((current / total) * 100) : 0;
       const label = current > 0 ? 'Reading progress' : 'Book overview';
+      
+      const readCount = CHAPTERS.filter(function(ch) { return isChapterRead(ch.path); }).length;
+      const completionStatus = current > 0 
+        ? 'Chapters read: ' + readCount + ' of ' + total
+        : 'Choose a chapter to begin';
 
       target.innerHTML =
         '<section class="chapter-nav" aria-label="Chapter navigation">' +
           '<div class="chapter-nav__progress">' +
             '<span class="chapter-nav__label">' + label + '</span>' +
             '<strong class="chapter-nav__chapter">' +
-              (current > 0 ? ('Chapter ' + current + ' of ' + total) : 'Choose a chapter from the sidebar') +
+              (current > 0 ? ('Chapter ' + current + ' of ' + total + ' — ' + completionStatus) : completionStatus) +
             '</strong>' +
             '<div class="chapter-nav__bar"><span class="chapter-nav__fill" style="width:' + progress + '%"></span></div>' +
           '</div>' +
