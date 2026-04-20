@@ -18,30 +18,57 @@ interface ProblemPageProps {
   chapters: any[];
 }
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://mastering-dsa.vercel.app';
+
 export default function ProblemPage({
   chapter,
   problem,
   content,
   chapters,
 }: ProblemPageProps) {
+  const title = `${problem.title} - ${chapter.title} - Mastering DSA`;
+  const description = `${problem.title} problem in ${chapter.title} chapter. Learn with multiple approaches and solutions.`;
+  const url = `${SITE_URL}/${chapter.slug}/${problem.slug}`;
+
   return (
     <>
       <Head>
-        <title>
-          {problem.title} - {chapter.title} - Mastering DSA
-        </title>
-        <meta
-          name="description"
-          content={`${problem.title} problem in ${chapter.title} chapter`}
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={url} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <link rel="canonical" href={url} />
+
+        {/* Schema.org - Article */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Article',
+              headline: title,
+              description: description,
+              url: url,
+              creator: {
+                '@type': 'Person',
+                name: 'Humayun Kabir',
+              },
+            }),
+          }}
         />
       </Head>
       <Layout chapters={chapters} currentChapter={chapter.slug}>
         <article className={styles.problem}>
-          <div className={styles.breadcrumb}>
+          <nav className={styles.breadcrumb}>
+            <Link href="/">Home</Link>
+            <span>/</span>
             <Link href={`/${chapter.slug}`}>{chapter.title}</Link>
             <span>/</span>
             <span>{problem.title}</span>
-          </div>
+          </nav>
 
           <div className={styles.problemHeader}>
             <h1>{problem.title}</h1>
@@ -54,8 +81,10 @@ export default function ProblemPage({
 
           <div className={styles.footer}>
             <p>
-              💡 Found this helpful? Share it with others or contribute on{' '}
-              <a href="https://github.com/humayunism/mastering-dsa">GitHub</a>
+              💡 Found this helpful? Share it with others or{' '}
+              <a href="https://github.com/humayunism/mastering-dsa" target="_blank" rel="noopener noreferrer">
+                contribute on GitHub
+              </a>
             </p>
           </div>
         </article>
@@ -110,6 +139,6 @@ export async function getStaticProps({ params }: any) {
       content: problemContent.content,
       chapters,
     },
-    revalidate: 60,
+    revalidate: 3600,
   };
 }
