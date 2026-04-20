@@ -3,6 +3,10 @@
 
 Welcome to the ultimate guide for mastering Data Structures and Algorithms! This repository is structured into 20 comprehensive chapters, each focusing on mathematical foundations, real-world applications, and multi-language solutions.
 
+> 🚀 **NEW!** We now have a beautiful **Next.js web book** with dark mode, search, and SEO optimization! 
+> 
+> **[🌐 Read the interactive book](./web/)** or [see quick start guide](./QUICKSTART.md)
+
 ---
 
 ## 🗺️ Learning Path (Curriculum)
