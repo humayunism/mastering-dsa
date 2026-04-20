@@ -110,28 +110,610 @@ Result: false ❌
 
 Choose your preferred language:
 
-### Approach 1: Sort by Start Time (Recommended ⭐)
-**Language:** [JavaScript](./solution.js) | [TypeScript](./solution.ts) | [Python](./solution.py) | [Go](./solution.go) | [C++](./solution.cpp)
+---
 
+### Approach 1: Sort by Start Time (Recommended ⭐)
+
+**Most intuitive approach - directly reflects the problem logic.**
+
+#### Python
+```python
+def attend_meetings(intervals):
+    """
+    Time Complexity: O(n log n) - dominated by sorting
+    Space Complexity: O(1)
+    """
+    if not intervals:
+        return True
+    
+    # Sort by start time
+    intervals.sort(key=lambda x: x[0])
+    
+    for i in range(1, len(intervals)):
+        current_start = intervals[i][0]
+        previous_end = intervals[i - 1][1]
+        
+        if current_start < previous_end:
+            return False
+    
+    return True
+
+# Test
+intervals = [[0, 30], [5, 10], [15, 20]]
+print(attend_meetings(intervals))  # False
 ```
-Most intuitive approach - directly reflects the problem logic.
-Simple to understand and implement.
+
+#### JavaScript
+```javascript
+function attendMeetings(intervals) {
+    if (intervals.length === 0) return true;
+    
+    intervals.sort((a, b) => a[0] - b[0]);
+
+    for (let i = 1; i < intervals.length; i++) {
+        let currentStart = intervals[i][0];
+        let previousEnd = intervals[i - 1][1];
+        if (currentStart < previousEnd) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+// Test
+console.log(attendMeetings([[0,30],[5,10],[15,20]])); // false
+console.log(attendMeetings([[7,10],[2,4]])); // true
 ```
+
+#### TypeScript
+```typescript
+function attendMeetings(intervals: number[][]): boolean {
+    if (intervals.length === 0) return true;
+    
+    intervals.sort((a, b) => a[0] - b[0]);
+
+    for (let i = 1; i < intervals.length; i++) {
+        let currentStart = intervals[i][0];
+        let previousEnd = intervals[i - 1][1];
+        if (currentStart < previousEnd) {
+            return false;
+        }
+    }
+
+    return true;
+}
+```
+
+#### Go
+```go
+func attendMeetings(intervals [][]int) bool {
+    if len(intervals) == 0 {
+        return true
+    }
+
+    sort.Slice(intervals, func(i, j int) bool {
+        return intervals[i][0] < intervals[j][0]
+    })
+
+    for i := 1; i < len(intervals); i++ {
+        currentStart := intervals[i][0]
+        previousEnd := intervals[i-1][1]
+
+        if currentStart < previousEnd {
+            return false
+        }
+    }
+
+    return true
+}
+```
+
+#### C++
+```cpp
+bool attendMeetings(vector<vector<int>>& intervals) {
+    if (intervals.empty()) {
+        return true;
+    }
+
+    sort(intervals.begin(), intervals.end(), 
+         [](const vector<int>& a, const vector<int>& b) {
+             return a[0] < b[0];
+         });
+
+    for (int i = 1; i < intervals.size(); i++) {
+        int currentStart = intervals[i][0];
+        int previousEnd = intervals[i - 1][1];
+
+        if (currentStart < previousEnd) {
+            return false;
+        }
+    }
+
+    return true;
+}
+```
+
+---
 
 ### Approach 2: Sort by End Time
-**Language:** [JavaScript](./solution.js) | [TypeScript](./solution.ts) | [Python](./solution.py) | [Go](./solution.go) | [C++](./solution.cpp)
 
+**Alternative sorting strategy - works but less intuitive.**
+
+#### Python
+```python
+def attend_meetings_by_end(intervals):
+    if not intervals:
+        return True
+    
+    # Sort by end time (second element)
+    intervals.sort(key=lambda x: x[1])
+    
+    for i in range(1, len(intervals)):
+        current_start = intervals[i][0]
+        previous_end = intervals[i - 1][1]
+        
+        if current_start < previous_end:
+            return False
+    
+    return True
 ```
-Alternative sorting strategy.
-Works but less intuitive than sorting by start time.
+
+#### JavaScript
+```javascript
+function attendMeetings2(intervals) {
+    if (intervals.length === 0) return true;
+    
+    intervals.sort((a, b) => a[1] - b[1]);
+
+    for (let i = 1; i < intervals.length; i++) {
+        let currentStart = intervals[i][0];
+        let previousEnd = intervals[i - 1][1];
+        if (currentStart < previousEnd) {
+            return false;
+        }
+    }
+
+    return true;
+}
 ```
+
+---
 
 ### Approach 3: Class-Based Solution
-**Language:** [JavaScript](./solution.js) | [TypeScript](./solution.ts) | [Python](./solution.py) | [Go](./solution.go) | [C++](./solution.cpp)
 
+**Object-oriented approach using Interval class/struct.**
+
+#### Python
+```python
+class Interval:
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+    
+    def __lt__(self, other):
+        return self.start < other.start
+
+def attend_meetings_class_based(intervals):
+    if not intervals:
+        return True
+    
+    # Convert to Interval objects
+    meetings = [Interval(interval[0], interval[1]) for interval in intervals]
+    
+    meetings.sort()
+
+    for i in range(1, len(meetings)):
+        current_start = meetings[i].start
+        previous_end = meetings[i - 1].end
+        
+        if current_start < previous_end:
+            return False
+    
+    return True
 ```
-Object-oriented approach using Interval class.
-Good for understanding OOP concepts.
+
+#### TypeScript
+```typescript
+class Interval {
+    start: number;
+    end: number;
+
+    constructor(start: number, end: number) {
+        this.start = start;
+        this.end = end;
+    }
+}
+
+function attendMeetings3(intervals: number[][]): boolean {
+    if (intervals.length === 0) return true;
+
+    let meetings: Interval[] = intervals.map(
+        (interval: number[]) => new Interval(interval[0], interval[1])
+    );
+
+    meetings.sort((a, b) => a.start - b.start);
+
+    for (let i = 1; i < meetings.length; i++) {
+        let currentStart = meetings[i].start;
+        let previousEnd = meetings[i - 1].end;
+        if (currentStart < previousEnd) {
+            return false;
+        }
+    }
+
+    return true;
+}
+```
+
+#### Go
+```go
+type Interval struct {
+    Start int
+    End   int
+}
+
+type IntervalSlice []Interval
+
+func (is IntervalSlice) Len() int {
+    return len(is)
+}
+
+func (is IntervalSlice) Less(i, j int) bool {
+    return is[i].Start < is[j].Start
+}
+
+func (is IntervalSlice) Swap(i, j int) {
+    is[i], is[j] = is[j], is[i]
+}
+
+func attendMeetingsClassBased(intervals [][]int) bool {
+    if len(intervals) == 0 {
+        return true
+    }
+
+    meetings := make(IntervalSlice, len(intervals))
+    for i, interval := range intervals {
+        meetings[i] = Interval{Start: interval[0], End: interval[1]}
+    }
+
+    sort.Sort(meetings)
+
+    for i := 1; i < len(meetings); i++ {
+        if meetings[i].Start < meetings[i-1].End {
+            return false
+        }
+    }
+
+    return true
+}
+```
+
+#### C++
+```cpp
+class Interval {
+public:
+    int start;
+    int end;
+
+    Interval(int start = 0, int end = 0) : start(start), end(end) {}
+
+    bool operator<(const Interval& other) const {
+        return start < other.start;
+    }
+};
+
+bool attendMeetingsClassBased(vector<vector<int>>& intervals) {
+    if (intervals.empty()) {
+        return true;
+    }
+
+    vector<Interval> meetings;
+    for (const auto& interval : intervals) {
+        meetings.push_back(Interval(interval[0], interval[1]));
+    }
+
+    sort(meetings.begin(), meetings.end());
+
+    for (int i = 1; i < meetings.size(); i++) {
+        if (meetings[i].start < meetings[i - 1].end) {
+            return false;
+        }
+    }
+
+    return true;
+} 1][1]
+        
+        if current_start < previous_end:
+            return False
+    
+    return True
+
+# Test
+intervals = [[0, 30], [5, 10], [15, 20]]
+print(attend_meetings(intervals))  # False
+```
+
+#### JavaScript
+```javascript
+function attendMeetings(intervals) {
+    if (intervals.length === 0) return true;
+    
+    intervals.sort((a, b) => a[0] - b[0]);
+
+    for (let i = 1; i < intervals.length; i++) {
+        let currentStart = intervals[i][0];
+        let previousEnd = intervals[i - 1][1];
+        if (currentStart < previousEnd) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+// Test
+console.log(attendMeetings([[0,30],[5,10],[15,20]])); // false
+console.log(attendMeetings([[7,10],[2,4]])); // true
+```
+
+#### TypeScript
+```typescript
+function attendMeetings(intervals: number[][]): boolean {
+    if (intervals.length === 0) return true;
+    
+    intervals.sort((a, b) => a[0] - b[0]);
+
+    for (let i = 1; i < intervals.length; i++) {
+        let currentStart = intervals[i][0];
+        let previousEnd = intervals[i - 1][1];
+        if (currentStart < previousEnd) {
+            return false;
+        }
+    }
+
+    return true;
+}
+```
+
+#### Go
+```go
+func attendMeetings(intervals [][]int) bool {
+    if len(intervals) == 0 {
+        return true
+    }
+
+    sort.Slice(intervals, func(i, j int) bool {
+        return intervals[i][0] < intervals[j][0]
+    })
+
+    for i := 1; i < len(intervals); i++ {
+        currentStart := intervals[i][0]
+        previousEnd := intervals[i-1][1]
+
+        if currentStart < previousEnd {
+            return false
+        }
+    }
+
+    return true
+}
+```
+
+#### C++
+```cpp
+bool attendMeetings(vector<vector<int>>& intervals) {
+    if (intervals.empty()) {
+        return true;
+    }
+
+    sort(intervals.begin(), intervals.end(), 
+         [](const vector<int>& a, const vector<int>& b) {
+             return a[0] < b[0];
+         });
+
+    for (int i = 1; i < intervals.size(); i++) {
+        int currentStart = intervals[i][0];
+        int previousEnd = intervals[i - 1][1];
+
+        if (currentStart < previousEnd) {
+            return false;
+        }
+    }
+
+    return true;
+}
+```
+
+---
+
+### Approach 2: Sort by End Time
+
+**Alternative sorting strategy - works but less intuitive.**
+
+#### Python
+```python
+def attend_meetings_by_end(intervals):
+    if not intervals:
+        return True
+    
+    # Sort by end time (second element)
+    intervals.sort(key=lambda x: x[1])
+    
+    for i in range(1, len(intervals)):
+        current_start = intervals[i][0]
+        previous_end = intervals[i - 1][1]
+        
+        if current_start < previous_end:
+            return False
+    
+    return True
+```
+
+#### JavaScript
+```javascript
+function attendMeetings2(intervals) {
+    if (intervals.length === 0) return true;
+    
+    intervals.sort((a, b) => a[1] - b[1]);
+
+    for (let i = 1; i < intervals.length; i++) {
+        let currentStart = intervals[i][0];
+        let previousEnd = intervals[i - 1][1];
+        if (currentStart < previousEnd) {
+            return false;
+        }
+    }
+
+    return true;
+}
+```
+
+---
+
+### Approach 3: Class-Based Solution
+
+**Object-oriented approach using Interval class/struct.**
+
+#### Python
+```python
+class Interval:
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+    
+    def __lt__(self, other):
+        return self.start < other.start
+
+def attend_meetings_class_based(intervals):
+    if not intervals:
+        return True
+    
+    # Convert to Interval objects
+    meetings = [Interval(interval[0], interval[1]) for interval in intervals]
+    
+    meetings.sort()
+
+    for i in range(1, len(meetings)):
+        current_start = meetings[i].start
+        previous_end = meetings[i - 1].end
+        
+        if current_start < previous_end:
+            return False
+    
+    return True
+```
+
+#### TypeScript
+```typescript
+class Interval {
+    start: number;
+    end: number;
+
+    constructor(start: number, end: number) {
+        this.start = start;
+        this.end = end;
+    }
+}
+
+function attendMeetings3(intervals: number[][]): boolean {
+    if (intervals.length === 0) return true;
+
+    let meetings: Interval[] = intervals.map(
+        (interval: number[]) => new Interval(interval[0], interval[1])
+    );
+
+    meetings.sort((a, b) => a.start - b.start);
+
+    for (let i = 1; i < meetings.length; i++) {
+        let currentStart = meetings[i].start;
+        let previousEnd = meetings[i - 1].end;
+        if (currentStart < previousEnd) {
+            return false;
+        }
+    }
+
+    return true;
+}
+```
+
+#### Go
+```go
+type Interval struct {
+    Start int
+    End   int
+}
+
+type IntervalSlice []Interval
+
+func (is IntervalSlice) Len() int {
+    return len(is)
+}
+
+func (is IntervalSlice) Less(i, j int) bool {
+    return is[i].Start < is[j].Start
+}
+
+func (is IntervalSlice) Swap(i, j int) {
+    is[i], is[j] = is[j], is[i]
+}
+
+func attendMeetingsClassBased(intervals [][]int) bool {
+    if len(intervals) == 0 {
+        return true
+    }
+
+    meetings := make(IntervalSlice, len(intervals))
+    for i, interval := range intervals {
+        meetings[i] = Interval{Start: interval[0], End: interval[1]}
+    }
+
+    sort.Sort(meetings)
+
+    for i := 1; i < len(meetings); i++ {
+        if meetings[i].Start < meetings[i-1].End {
+            return false
+        }
+    }
+
+    return true
+}
+```
+
+#### C++
+```cpp
+class Interval {
+public:
+    int start;
+    int end;
+
+    Interval(int start = 0, int end = 0) : start(start), end(end) {}
+
+    bool operator<(const Interval& other) const {
+        return start < other.start;
+    }
+};
+
+bool attendMeetingsClassBased(vector<vector<int>>& intervals) {
+    if (intervals.empty()) {
+        return true;
+    }
+
+    vector<Interval> meetings;
+    for (const auto& interval : intervals) {
+        meetings.push_back(Interval(interval[0], interval[1]));
+    }
+
+    sort(meetings.begin(), meetings.end());
+
+    for (int i = 1; i < meetings.size(); i++) {
+        if (meetings[i].start < meetings[i - 1].end) {
+            return false;
+        }
+    }
+
+    return true;
+}
 ```
 
 ---
